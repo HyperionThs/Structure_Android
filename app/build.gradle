@@ -20,6 +20,7 @@ android {
     versionCode rootProject.ext.versionCode
     versionName rootProject.ext.versionName
 
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     vectorDrawables.useSupportLibrary = true
   }
 
@@ -53,6 +54,7 @@ android {
   buildTypes {
     debug {
       versionNameSuffix = "debug"
+      testCoverageEnabled = true
 
       applicationVariants.all { variant -> appendVersionNameVersionCode(variant)
       }
