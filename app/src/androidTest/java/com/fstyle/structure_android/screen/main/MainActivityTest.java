@@ -1,30 +1,22 @@
 package com.fstyle.structure_android.screen.main;
 
+import android.support.test.espresso.Espresso;
+import android.support.test.espresso.action.ViewActions;
+import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
 import com.fstyle.structure_android.R;
-import org.junit.Before;
+import cucumber.api.CucumberOptions;
 import org.junit.Rule;
 import org.junit.Test;
-
-import android.support.test.espresso.Espresso;
-import android.support.test.espresso.matcher.ViewMatchers;
-import android.support.test.espresso.action.ViewActions;
-import org.junit.runner.RunWith;
 
 /**
  * Created by Sun on 5/7/2017.
  */
-@RunWith(AndroidJUnit4.class)
+@CucumberOptions(features = "features")
 public class MainActivityTest {
 
     @Rule
     public ActivityTestRule<MainActivity> mTestRule = new ActivityTestRule<>(MainActivity.class);
-
-    @Before
-    public void setUp() throws Exception {
-
-    }
 
 //    @Test
 //    public void onSearchError() throws Exception {
