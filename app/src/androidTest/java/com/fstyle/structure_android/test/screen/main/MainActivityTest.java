@@ -8,6 +8,7 @@ import com.fstyle.structure_android.R;
 import com.fstyle.structure_android.screen.main.MainActivity;
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import junit.framework.Assert;
 
@@ -30,9 +31,25 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         Assert.assertNotNull(getActivity());
     }
 
-    @When("^I input keyword \"(S+)\"$")
-    public void I_input_keyword(String keyword) {
+    @When("^I input keyword (\\S+)$")
+    public void I_input_keyword(final String keyword) {
         Espresso.onView(ViewMatchers.withId(R.id.edtKeyword))
                 .perform(ViewActions.typeText(keyword));
+    }
+
+    @When("^I input limit number (\\S+)$")
+    public void I_input_limit_number(final String limit) {
+        Espresso.onView(ViewMatchers.withId(R.id.edtNumberLimit))
+                .perform(ViewActions.typeText(limit));
+    }
+
+    @Then("^I should see error on the (\\S+)$")
+    public void i_should_see_error_on_the_keyword(final String view) {
+        // Write code here that turns the phrase above into concrete actions
+        Espresso.onView(ViewMatchers.withId(R.id.edtKeyword)).perform(ViewActions.typeText(view));
+    }
+
+    @Then("^I should (true|false) Result Screen")
+    public void i_should_true_result_screen(final boolean shouldSeeError) {
     }
 }

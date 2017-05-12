@@ -5,7 +5,7 @@ Feature: Search User GitHub
         Given I have a MainActivity
         When I input keyword <keyword>
         And I input limit number <limit>
-        Then I should see error on the <View>
+        Then I should see error on the <view>
 
      Examples:
         | keyword | limit | view    |
