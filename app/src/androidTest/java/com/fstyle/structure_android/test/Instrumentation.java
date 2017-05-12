@@ -1,4 +1,4 @@
-package com.fstyle.structure_android;
+package com.fstyle.structure_android.test;
 
 import android.os.Bundle;
 import android.support.test.runner.MonitoringInstrumentation;
