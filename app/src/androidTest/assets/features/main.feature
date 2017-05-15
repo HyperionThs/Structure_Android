@@ -10,8 +10,11 @@ Feature: Search User GitHub
      Examples:
         | keyword | limit | view    |
         | shit    | 123   | keyword |
+        | shit    | 24   | keyword |
+        | abc    | 123   | keyword |
+        | def    | 245   | keyword |
 
-     Scenario Outline: Input keyword and limit number in correct format
+     Scenario: Input keyword and limit number in correct format
         Given I have a MainActivity
         When I input keyword <keyword>
         And I input limit number <limit>
